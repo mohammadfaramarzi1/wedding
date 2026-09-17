@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعوت‌نامه عقد | محمد و یاسمن</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;500;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #2b0d2b 0%, #4a1a3a 25%, #3d1533 50%, #4a1a3a 75%, #2b0d2b 100%);
+            background-size: 400% 400%;
+            animation: bgShift 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        @keyframes bgShift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.2;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: -20px;
+            animation: confettiFall linear infinite;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-20px) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(105vh) rotate(720deg) scale(0.5);
+                opacity: 0.3;
+            }
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart-float {
+            position: absolute;
+            font-size: 24px;
+            animation: floatUp 12s infinite linear;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-20vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .card-wrapper {
+            position: relative;
+            z-index: 10;
+            max-width: 720px;
+            width: 100%;
+            border-radius: 45px;
+            padding: 4px;
+            background: linear-gradient(45deg, #ffd700, #ff6b9d, #ffd700, #ff6b9d, #ffd700);
+            background-size: 400% 400%;
+            animation: goldShine 4s ease infinite;
+            box-shadow: 0 0 60px rgba(255, 200, 100, 0.4), 0 0 100px rgba(255, 100, 150, 0.3);
+        }
+
+        @keyframes goldShine {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .invitation-card {
+            position: relative;
+            width: 100%;
+            background: linear-gradient(160deg, #fff9fc 0%, #fff0f7 50%, #fff5fa 100%);
+            border-radius: 42px;
+            padding: 50px 40px 45px;
+            text-align: center;
+            animation: cardAppear 1.2s cubic-bezier(0.23, 1, 0.32, 1) both;
+            overflow: hidden;
+        }
+
+        .invitation-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 200, 220, 0.15) 0%, transparent 70%);
+            animation: innerGlow 6s ease infinite;
+            pointer-events: none;
+        }
+
+        @keyframes innerGlow {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(20px, 20px);
+            }
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+                filter: blur(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+
+        .corner-deco {
+            position: absolute;
+            font-size: 42px;
+            opacity: 0.35;
+            z-index: 2;
+            animation: decoFloat 4s ease-in-out infinite;
+        }
+
+        .corner-deco.top-right {
+            top: 15px;
+            right: 25px;
+            transform: rotate(20deg);
+        }
+
+        .corner-deco.top-left {
+            top: 15px;
+            left: 25px;
+            transform: rotate(-20deg);
+        }
+
+        .corner-deco.bottom-right {
+            bottom: 15px;
+            right: 25px;
+            transform: rotate(-20deg);
+        }
+
+        .corner-deco.bottom-left {
+            bottom: 15px;
+            left: 25px;
+            transform: rotate(20deg);
+        }
+
+        @keyframes decoFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(20deg);
+            }
+
+            50% {
+                transform: translateY(-6px) rotate(25deg);
+            }
+        }
+
+        .corner-deco.top-left,
+        .corner-deco.bottom-right {
+            animation: decoFloatLeft 4s ease-in-out infinite;
+        }
+
+        @keyframes decoFloatLeft {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-20deg);
+            }
+
+            50% {
+                transform: translateY(-6px) rotate(-25deg);
+            }
+        }
+
+        .deco-line {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .deco-line .line {
+            width: 70px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4839a, transparent);
+        }
+
+        .deco-line .diamond {
+            color: #d4839a;
+            font-size: 14px;
+            transform: rotate(45deg);
+            display: inline-block;
+            animation: diamondSpin 3s linear infinite;
+        }
+
+        @keyframes diamondSpin {
+            from {
+                transform: rotate(45deg);
+            }
+
+            to {
+                transform: rotate(405deg);
+            }
+        }
+
+        .bismillah {
+            font-size: 16px;
+            color: #a06b7a;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .invite-title {
+            font-size: 20px;
+            font-weight: 400;
+            color: #a06b7a;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .names {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            margin: 15px 0 10px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .name {
+            font-size: 44px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #d4608a, #ff9bb8, #d4608a, #ff9bb8, #d4608a);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.3;
+            animation: nameShine 4s ease infinite;
+            filter: drop-shadow(0 3px 6px rgba(200, 100, 130, 0.25));
+        }
+
+        @keyframes nameShine {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .ampersand {
+            font-size: 38px;
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.25);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+
+            75% {
+                transform: scale(1.15);
+            }
+        }
+
+        .invite-text {
+            font-size: 17px;
+            color: #7a5a64;
+            line-height: 2;
+            margin: 20px 0 15px;
+            font-weight: 400;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .poem {
+            background: linear-gradient(135deg, rgba(255, 230, 240, 0.9), rgba(255, 240, 248, 0.7));
+            border-radius: 24px;
+            padding: 22px 25px;
+            margin: 22px auto;
+            max-width: 520px;
+            border: 1px solid rgba(220, 160, 180, 0.4);
+            position: relative;
+            box-shadow: inset 0 2px 12px rgba(255, 200, 220, 0.3), 0 4px 20px rgba(255, 180, 210, 0.2);
+            z-index: 2;
+        }
+
+        .poem::before {
+            content: '❝';
+            position: absolute;
+            top: -5px;
+            right: 15px;
+            font-size: 50px;
+            color: rgba(200, 120, 150, 0.25);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .poem p {
+            font-size: 16px;
+            color: #8a5a68;
+            line-height: 2.2;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .poem .poem-author {
+            font-size: 13px;
+            color: #b88a98;
+            margin-top: 10px;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            margin: 25px 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 17px;
+            color: #6d4a54;
+            background: rgba(255, 240, 245, 0.85);
+            padding: 10px 28px;
+            border-radius: 50px;
+            border: 1px solid rgba(220, 170, 190, 0.5);
+            transition: all 0.3s ease;
+            width: fit-content;
+            min-width: 260px;
+            box-shadow: 0 2px 10px rgba(200, 150, 170, 0.15);
+        }
+
+        .detail-item:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(200, 150, 170, 0.35);
+            background: rgba(255, 245, 250, 1);
+            border-color: #d4839a;
+        }
+
+        .detail-item .icon {
+            font-size: 20px;
+        }
+
+        .detail-item .label {
+            font-weight: 300;
+            color: #a06b7a;
+        }
+
+        .detail-item .value {
+            font-weight: 700;
+            color: #8a4a5a;
+        }
+
+        .address-item {
+            min-width: 300px;
+            max-width: 100%;
+            padding: 12px 30px;
+        }
+
+        .address-item .value {
+            font-size: 15px;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        .address-icon {
+            animation: pinBounce 1.5s infinite ease-in-out;
+        }
+
+        @keyframes pinBounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .refreshment {
+            font-size: 18px;
+            color: #a06b7a;
+            font-weight: 500;
+            margin: 10px 0 5px;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .refreshment span {
+            display: inline-block;
+            animation: sparkle 2s infinite;
+        }
+
+        @keyframes sparkle {
+
+            0%,
+            100% {
+                opacity: 0.6;
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2) rotate(10deg);
+            }
+        }
+
+        .countdown-container {
+            margin: 25px 0 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .countdown-title {
+            font-size: 14px;
+            color: #b88a98;
+            margin-bottom: 12px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: linear-gradient(145deg, #fff5f9, #ffeef5);
+            border-radius: 16px;
+            padding: 12px 16px;
+            min-width: 72px;
+            box-shadow: 0 4px 15px rgba(200, 150, 170, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(220, 170, 190, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .countdown-item:hover {
+            transform: scale(1.08) rotate(-2deg);
+        }
+
+        .countdown-number {
+            font-size: 28px;
+            font-weight: 900;
+            color: #c96f8a;
+            display: block;
+            line-height: 1.2;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .countdown-label {
+            font-size: 11px;
+            color: #b88a98;
+            font-weight: 400;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .footer-signature {
+            margin-top: 25px;
+            font-size: 15px;
+            color: #b88a98;
+            font-weight: 400;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-signature .heart {
+            color: #e86b8a;
+            font-size: 18px;
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+        }
+
+        .music-btn {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            z-index: 100;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #ff6b9d, #ffd700);
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            font-size: 26px;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(255, 107, 157, 0.6), 0 0 40px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: musicPulse 2s infinite;
+        }
+
+        @keyframes musicPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 8px 30px rgba(255, 107, 157, 0.6), 0 0 40px rgba(255, 215, 0, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 8px 40px rgba(255, 107, 157, 0.9), 0 0 60px rgba(255, 215, 0, 0.6);
+            }
+        }
+
+        .music-btn:hover {
+            transform: scale(1.15) rotate(10deg);
+        }
+
+        .music-btn:active {
+            transform: scale(0.95);
+        }
+
+        .music-btn.playing {
+            animation: musicSpin 3s linear infinite;
+        }
+
+        @keyframes musicSpin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .invitation-card {
+                padding: 35px 22px 30px;
+                border-radius: 32px;
+            }
+
+            .card-wrapper {
+                border-radius: 35px;
+                padding: 3px;
+            }
+
+            .name {
+                font-size: 30px;
+            }
+
+            .ampersand {
+                font-size: 26px;
+            }
+
+            .names {
+                gap: 8px;
+            }
+
+            .invite-text {
+                font-size: 15px;
+            }
+
+            .poem p {
+                font-size: 14px;
+            }
+
+            .detail-item {
+                font-size: 15px;
+                padding: 8px 20px;
+                min-width: 220px;
+            }
+
+            .address-item {
+                min-width: 240px;
+                padding: 10px 20px;
+            }
+
+            .address-item .value {
+                font-size: 13px;
+            }
+
+            .countdown-item {
+                min-width: 60px;
+                padding: 10px 12px;
+            }
+
+            .countdown-number {
+                font-size: 22px;
+            }
+
+            .corner-deco {
+                font-size: 30px;
+            }
+
+            .music-btn {
+                bottom: 18px;
+                left: 18px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .name {
+                font-size: 24px;
+            }
+
+            .ampersand {
+                font-size: 20px;
+            }
+
+            .detail-item {
+                font-size: 13px;
+                padding: 7px 16px;
+                min-width: 190px;
+            }
+
+            .address-item {
+                min-width: 200px;
+            }
+
+            .address-item .value {
+                font-size: 12px;
+            }
+
+            .countdown-item {
+                min-width: 52px;
+                padding: 8px 10px;
+            }
+
+            .countdown-number {
+                font-size: 18px;
+            }
+
+            .countdown-label {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="stars" id="stars"></div>
+    <div class="confetti-container" id="confettiContainer"></div>
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <button class="music-btn" id="musicBtn" title="پخش آهنگ شاد عروسی">🎵</button>
+
+    <div class="card-wrapper">
+        <div class="invitation-card">
+            <span class="corner-deco top-right">🌸</span>
+            <span class="corner-deco top-left">🌸</span>
+            <span class="corner-deco bottom-right">🌿</span>
+            <span class="corner-deco bottom-left">🌿</span>
+
+            <div class="deco-line">
+                <span class="line"></span>
+                <span class="diamond">◆</span>
+                <span class="line"></span>
+            </div>
+
+            <div class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِیم</div>
+
+            <div class="invite-title">به میهمانی عقد ما خوش آمدید</div>
+
+            <div class="names">
+                <span class="name">محمد فرامرزی</span>
+                <span class="ampersand">💕</span>
+                <span class="name">یاسمن نعمتی</span>
+            </div>
+
+            <p class="invite-text">
+                با کمال خرسندی و شادی، حضور شما عزیزان را در مراسم عقد و پیوند زندگانی مشترکمان گرامی می‌داریم.
+            </p>
+
+            <div class="poem">
+                <p>
+                    ای عشق، ای آغاز بی‌پایان من<br>
+                    با تو جهان زیبا شد و آسان من<br>
+                    دستت در دستم، دلم آرام گرفت<br>
+                    یاسمن شد باغِ دل، فصل بهاران من
+                </p>
+                <div class="poem-author">— محمد و یاسمن</div>
+            </div>
+
+            <div class="details">
+                <div class="detail-item">
+                    <span class="icon">📅</span>
+                    <span class="label">تاریخ:</span>
+                    <span class="value">۱۱ مهر ۱۴۰۵</span>
+                </div>
+                <div class="detail-item">
+                    <span class="icon">⏰</span>
+                    <span class="label">ساعت:</span>
+                    <span class="value">۱۹:۰۰ تا ۲۲:۰۰</span>
+                </div>
+                <div class="detail-item address-item">
+                    <span class="icon address-icon">📍</span>
+                    <span class="label">آدرس:</span>
+                    <span class="value">نسیم شهر، بلوار امام خمینی، خیابان ستاری، خیابان کوثر تالار برلیان </span>
+                </div>
+            </div>
+
+            <div class="refreshment">
+                <span>🍰</span> به صرف شیرینی و شام <span>🍽️</span>
+            </div>
+
+            <div class="countdown-container">
+                <div class="countdown-title">⏳ شمارش معکوس تا آغاز مراسم</div>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">--</span>
+                        <span class="countdown-label">روز</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">--</span>
+                        <span class="countdown-label">ساعت</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">--</span>
+                        <span class="countdown-label">دقیقه</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">--</span>
+                        <span class="countdown-label">ثانیه</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-signature">
+                با عشق <span class="heart">❤️</span> محمد و یاسمن
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* ============================================
+           ۱. ستاره‌های پس‌زمینه
+           ============================================ */
+        (function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 150;
+
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                starsContainer.appendChild(star);
+            }
+        })();
+
+        /* ============================================
+           ۲. کانفتی (کاغذ رنگی شاد)
+           ============================================ */
+        (function createConfetti() {
+            const container = document.getElementById('confettiContainer');
+            const colors = ['#ff6b9d', '#ffd700', '#ff9bb8', '#d4608a', '#ffe066', '#ff4757', '#ffa502', '#ff6348', '#e84393', '#fdcb6e'];
+            const confettiCount = 60;
+
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = (Math.random() * 4 + 5) + 's';
+                confetti.style.animationDelay = Math.random() * 8 + 's';
+                confetti.style.width = (Math.random() * 8 + 5) + 'px';
+                confetti.style.height = (Math.random() * 12 + 6) + 'px';
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                confetti.style.opacity = Math.random() * 0.6 + 0.4;
+                container.appendChild(confetti);
+            }
+        })();
+
+        /* ============================================
+           ۳. قلب‌ها و پروانه‌های شناور
+           ============================================ */
+        (function createFloatingHearts() {
+            const container = document.getElementById('floatingHearts');
+            const symbols = ['❤️', '💕', '💗', '💖', '🌸', '✨', '🦋', '🌺', '💝', '🎀'];
+            const heartCount = 35;
+
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-float';
+                heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.fontSize = (Math.random() * 22 + 14) + 'px';
+                heart.style.animationDelay = Math.random() * 12 + 's';
+                heart.style.animationDuration = (Math.random() * 8 + 8) + 's';
+                container.appendChild(heart);
+            }
+        })();
+
+        /* ============================================
+           ۴. شمارش معکوس
+           ============================================ */
+        const weddingDate = new Date('2026-10-02T19:00:00').getTime();
+
+        function toPersianNum(num) {
+            const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+            return num.toString().replace(/\d/g, (d) => persianDigits[d]);
+        }
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const diff = weddingDate - now;
+
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '۰';
+                document.getElementById('hours').textContent = '۰';
+                document.getElementById('minutes').textContent = '۰';
+                document.getElementById('seconds').textContent = '۰';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = toPersianNum(days);
+            document.getElementById('hours').textContent = toPersianNum(hours);
+            document.getElementById('minutes').textContent = toPersianNum(minutes);
+            document.getElementById('seconds').textContent = toPersianNum(seconds);
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        /* ============================================
+           ۵. آهنگ شاد عروسی (ورود عروس و داماد)
+           ============================================ */
+        const musicBtn = document.getElementById('musicBtn');
+
+        // ساخت المان صوتی با لینک آهنگ
+        const audio = new Audio();
+        audio.src = './Music Afshar - Voroode Arooso Damad (128).mp3';
+        audio.loop = true;       // تکرار بی‌نهایت
+        audio.volume = 0.7;      // صدای ۷۰٪
+        audio.preload = 'auto';
+        audio.autoplay = true;  // پیش‌بارگذاری
+
+        let isPlaying = false;
+
+        // به‌روزرسانی ظاهر دکمه
+        function updateButton() {
+            if (isPlaying) {
+                musicBtn.textContent = '🔊';
+                musicBtn.classList.add('playing');
+            } else {
+                musicBtn.textContent = '🎵';
+                musicBtn.classList.remove('playing');
+            }
+        }
+
+        // تلاش برای پخش
+        function tryPlay() {
+            const playPromise = audio.play();
+
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => {
+                        isPlaying = true;
+                        updateButton();
+                    })
+                    .catch((error) => {
+                        // مرورگر اجازه پخش خودکار نداد
+                        console.log('پخش خودکار مسدود شد:', error);
+                        isPlaying = false;
+                        updateButton();
+                    });
+            }
+        }
+
+        // توقف پخش
+        function pauseMusic() {
+            audio.pause();
+            isPlaying = false;
+            updateButton();
+        }
+
+        // کلیک روی دکمه موسیقی
+        musicBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (isPlaying) {
+                pauseMusic();
+            } else {
+                tryPlay();
+            }
+        });
+
+        // رویدادهای صوتی
+        audio.addEventListener('playing', () => {
+            isPlaying = true;
+            updateButton();
+        });
+
+        audio.addEventListener('pause', () => {
+            isPlaying = false;
+            updateButton();
+        });
+
+        audio.addEventListener('error', (e) => {
+            console.error('خطا در پخش آهنگ:', e);
+            isPlaying = false;
+            updateButton();
+        });
+
+        // ============ پخش خودکار ============
+
+        // ۱. تلاش برای پخش فوری هنگام بارگذاری صفحه
+        window.addEventListener('load', () => {
+            tryPlay();
+        });
+
+        // ۲. اگر مرورگر اجازه نداد، با اولین تعامل کاربر پخش کن
+        const autoStartEvents = ['click', 'touchstart', 'keydown', 'scroll', 'mousemove'];
+
+        function autoStartHandler() {
+            if (!isPlaying) {
+                tryPlay();
+            }
+            // حذف شنونده‌ها بعد از اولین پخش موفق
+            if (isPlaying) {
+                autoStartEvents.forEach(evt => {
+                    document.removeEventListener(evt, autoStartHandler);
+                });
+            }
+        }
+
+        autoStartEvents.forEach(evt => {
+            document.addEventListener(evt, autoStartHandler, { once: false, passive: true });
+        });
+
+        /* ============================================
+           ۶. افکت پارالاکس ملایم با ماوس
+           ============================================ */
+        const cardWrapper = document.querySelector('.card-wrapper');
+
+        document.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 80;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 80;
+            cardWrapper.style.transform = `perspective(1000px) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        document.addEventListener('mouseleave', () => {
+            cardWrapper.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
+        });
+
+        /* ============================================
+           ۷. انیمیشن ورود تدریجی عناصر
+           ============================================ */
+        window.addEventListener('load', () => {
+            const elements = document.querySelectorAll(
+                '.invite-text, .poem, .details, .refreshment, .countdown-container, .footer-signature'
+            );
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'all 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 400 + index * 150);
+            });
+        });
+    </script>
+</body>
+
+</html>
