@@ -200,14 +200,13 @@
             position: relative;
             width: 100%;
             background: #f5f1ea;
-            background-image: url('./165783de-fb66-441a-9d12-db3e51cc26f5.jpg');
+            background-image: url('./InShot_20260922_134744655.jpg');
             background-size: cover;
             background-position: center 28%;
             background-repeat: no-repeat;
             background-color: #f5f1ea;
             border-radius: 7px;
             padding: 65px 55px 60px;
-            /* پدینگ بیشتر برای کارت بزرگ‌تر */
             text-align: center;
             animation: cardAppear 1.2s cubic-bezier(0.23, 1, 0.32, 1) both;
             overflow: hidden;
@@ -222,7 +221,6 @@
             width: 100%;
             height: 100%;
             background: rgba(245, 241, 234, 0.10);
-            /* کمی شفاف‌تر شد */
             pointer-events: none;
             z-index: 0;
             border-radius: 7px;
@@ -263,7 +261,6 @@
                 filter: blur(0);
             }
         }
-
 
         /* === تزئینات گوشه === */
         .corner-deco {
@@ -705,11 +702,18 @@
             }
         }
 
-        /* === ریسپانسیو === */
+        /* === ریسپانسیو اصلی === */
+        @media (max-width: 900px) {
+            .invitation-card {
+                background-position: center 22%;
+            }
+        }
+
         @media (max-width: 600px) {
             .invitation-card {
                 padding: 42px 26px 38px;
                 border-radius: 6px;
+                background-position: center 12%;
             }
 
             .invitation-card::after {
@@ -805,6 +809,11 @@
         }
 
         @media (max-width: 400px) {
+            .invitation-card {
+                background-position: center 8%;
+                padding: 36px 18px 32px;
+            }
+
             .bismillah {
                 font-size: 24px;
             }
